@@ -6,7 +6,13 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+nav{
+  display:flex;
+  align-items: center;
+  background-color: pink;
+  height:10vh;
+  padding:5vh 3vw;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
