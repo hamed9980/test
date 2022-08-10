@@ -3,11 +3,23 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+ function props(key){
+  var propos={mot:'Ali',cle:'Saleh',key:key}
+  return <App props1={propos}/>
+}
+const props1=[
+  props(0),
+  props(1),
+  props(2),
+  props(3)
+]
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+  {/*{[...props1]}*/}
+<App/>
+
   </React.StrictMode>
 );
 
