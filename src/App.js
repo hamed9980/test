@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Main from './components/Main'
+import tableau from './tableau'
 import React,{useState} from 'react'
 function App() {
   return (
@@ -63,8 +64,11 @@ export function App4(){
     Country:"Tunisia",
     liked:false
   })
-  function toggleFavorite(){
-
+  function toggleFavorite(value,value1){
+    console.log(value,value1)
+if(value1==="th (1).jpg"){
+  console.log('yes')
+}
     setContact(prevContact=>({
       ...prevContact,
       liked:!prevContact.liked
@@ -75,10 +79,36 @@ let liked1=contact.liked?"th.jpg":"th (1).jpg"
 console.log(liked1)
 return (<main>
 <article>
-<img src={`/assets/images/${liked1}`} onClick={toggleFavorite}/>
+<img src={`/assets/images/${liked1}`} onClick={()=>toggleFavorite(`${liked1}` )}/>
 </article>
 </main>
 )
 }
+var tabX=tableau
+export function App5(){
+  var i=0;
 
-export default App4;
+const [tab1,changeColor]=React.useState(tabX);
+function changeColor1(i){
+
+
+
+    changeColor(prevAtt=>{
+      prevAtt[i].color=!prevAtt[i].color;
+    return(prevAtt);
+  })
+
+
+  console.log(tab1[i])
+}
+
+
+var tableau1=tab1.map((element)=>{
+var styles={backgroundColor:element.color?"red":"blue"}
+
+return  (<button style={styles} onClick={()=>changeColor1(element.key)} key={element.key}>{element.value}</button>)
+})
+return(<div>{tableau1}</div>)
+}
+
+export default App5;
